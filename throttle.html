@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throttle</title>
+</head>
+<body>
+    <button id="btn">Click me</button>
+</body>
+</html>
+<script>
+    const callingApi=()=>{
+        console.log("calling api in progress");
+    }
+
+    let count=0;
+    function throttle(fun,wait){
+        let lastCall=0;
+      
+        return function(){
+            count++;
+        console.log(count);
+            //present time, last call time was made
+            if(Date.now()-lastCall>wait){
+                lastCall=Date.now();
+                fun.apply(this,arguments);
+            }
+        }
+    }
+    window.addEventListener("load",function(){
+        var btn=document.getElementById("btn");
+        btn.addEventListener("click",throttle(callingApi,1000));
+    })
+</script>

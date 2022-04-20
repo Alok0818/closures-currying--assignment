@@ -1,0 +1,17 @@
+
+Currying?
+When we have nested functions if we want to call deepest function and all inner functions have arguments then it is very difficult to create many variables and start invoking.
+But currying gives us easy way we can invoke in single line as fn()()()()()();
+
+Is currying same as closure?
+Currying means that the closure(stores variables) does not have to receive all of its arguments at once, but separately. 
+I've found this useful metaphor around the internet: Think of currying as adding ingredients (arguments, or other spices) to a function one by one.
+What is currying in Redux? (where currying used in react librarary);
+Currying allows us to create middleware for Redux that doesn't interfere with any of it's functionality.
+
+IIFE-->immediately invoked function Expression;
+genereally when we use many variables there might be some conflicts while using different libraries. So if a function and variable has local scope we just make it as IIFE. So that it executes straight away and variable is deleted.
+(function(){
+    console.log("yes")
+})();
+As in ES6 block scope is introduced by let now use of IIFE is reduced
